@@ -1,0 +1,31 @@
+<head>
+    <style>
+        h1{ color: blue; }
+    </style>
+    
+</head>
+<body>
+    <h1>GIF GENERATOR</h1>
+    <img id="gif" src="" />
+    <p> Enter a seach term here: <input id = "search"/></p>
+    <button onclick= "getGiphyData()"> Find a Gif</button>
+    
+    <script>
+        function getGiphyData(){ 
+            var searchTerm = document.querySelector('#search').value
+            var url='https://api.giphy.com/v1/gifs/search?api_key=fitk9ad1ZLCAPH7QhsydpZVYIUjO0tcM&q='+searchTerm
+            
+            fetch(url)
+            .then( data => data.json() )
+            .then( res  =>{
+                console.log(res)
+                var arrayOfGifs = res.data
+                var rand = Math.floor(math.)
+                var firstItem = arrayOfGifs[0]
+                var giphylink = firstItem.images.fixed_width.url
+                document.querySelector( '#search').setAttribute('src', giphylink)
+            })
+            .catch( error => console.log(error))
+        }
+    </script>
+</body>
