@@ -12,8 +12,8 @@ server.get('/', function(request, response){
     response.render('home.ejs')
 })
 
-var port = 8080
+var port = process.env.PORT
 
 server.listen(port, () => {
-    console.log('server running on port: ' +port)
+    console.log('Server running on port: ' +port)
 })
